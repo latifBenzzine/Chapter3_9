@@ -10,7 +10,7 @@ import packt.selenium.chap3_9.pageobjects.Google;
 import packt.selenium.chap3_9.pageobjects.GoogleSearchPage;
 
 import java.util.concurrent.TimeUnit;
-
+import org.openqa.selenium.chrome.ChromeDriver;
 /**
  * Created by Ripon on 11/19/2015.
  */
@@ -21,7 +21,8 @@ public class SearchGoogleTest {
 
     @Before
     public void setUp() throws Exception {
-        driver = new FirefoxDriver();
+        System.setProperty("webdriver.chrome.driver", "C:\\Users\\defaultuser0\\Downloads\\selenium_Code\\5487OS_Code\\FinalExampleCode\\Chapter1\\src\\test\\resources\\chromedriver.exe");
+        driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
     }
