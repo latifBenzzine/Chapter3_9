@@ -16,8 +16,9 @@ public class Google {
         this.driver = driver;
         baseURL = "https://www.google.com/";
         driver.get(baseURL + "?gws_rd=cr,ssl&ei=qZlNVpOUMNCauQS0iYmoCA&fg=1");
-        System.out.println(driver.getTitle());
-        if (!driver.getTitle().equals("Google ")){
+        String expected = driver.getTitle();
+        System.out.println(expected);
+        if (!expected.equals("Google")){
             throw new WrongPageException("Incorrect page for Google Home page");
         }
     }
